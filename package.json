@@ -1,0 +1,87 @@
+{
+  "name": "payload-ai-admin",
+  "version": "0.1.0",
+  "description": "Config-driven AI control panel for Payload CMS. Declare what the AI may read/create/update/delete; get a chat panel in the admin that controls your app — every action runs through Payload access control as the logged-in user.",
+  "license": "MIT",
+  "author": "blazeITHugo <hugo@blazeit.sk>",
+  "homepage": "https://github.com/blazeITHugo/payload-ai-admin#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blazeITHugo/payload-ai-admin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blazeITHugo/payload-ai-admin/issues"
+  },
+  "keywords": [
+    "payload",
+    "payloadcms",
+    "payload-plugin",
+    "ai",
+    "ai-sdk",
+    "anthropic",
+    "admin",
+    "chat",
+    "agent",
+    "copilot"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./dist/exports/client.d.ts",
+      "import": "./dist/exports/client.js",
+      "default": "./dist/exports/client.js"
+    },
+    "./rsc": {
+      "types": "./dist/exports/rsc.d.ts",
+      "import": "./dist/exports/rsc.js",
+      "default": "./dist/exports/rsc.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "dev": "tsc -w -p tsconfig.build.json",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.58",
+    "@ai-sdk/react": "^3.0.118",
+    "ai": "^6.0.116",
+    "lucide-react": "^0.563.0",
+    "zod": "^4.3.6"
+  },
+  "peerDependencies": {
+    "next": "^15.0.0 || ^16.0.0",
+    "payload": "^3.37.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.9",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "next": "^16.2.6",
+    "payload": "^3.84.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

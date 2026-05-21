@@ -1,0 +1,16 @@
+node_modules
+dist
+*.tgz
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+
+# dev app
+dev/.next
+dev/*.db
+dev/*.db-*
+
+# misc
+.DS_Store
+*.log
